@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quieres ser mi San Valentín, Pamela?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      overflow: hidden;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #e91e63;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #333;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #si {
+      background-color: #e91e63;
+      color: white;
+    }
+
+    #no {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    #no:hover {
+      background-color: #999;
+    }
+
+    #mensaje {
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #e91e63;
+    }
+
+    /* Fondo con corazones */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .hearts span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      animation: animate 5s linear infinite;
+      bottom: -150px;
+    }
+
+    .hearts span:nth-child(1) {
+      left: 25%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 0s;
+    }
+
+    .hearts span:nth-child(2) {
+      left: 10%;
+      width: 60px;
+      height: 60px;
+      animation-delay: 2s;
+      animation-duration: 12s;
+    }
+
+    .hearts span:nth-child(3) {
+      left: 70%;
+      width: 100px;
+      height: 100px;
+      animation-delay: 4s;
+    }
+
+    .hearts span:nth-child(4) {
+      left: 40%;
+      width: 50px;
+      height: 50px;
+      animation-delay: 0s;
+      animation-duration: 15s;
+    }
+
+    .hearts span:nth-child(5) {
+      left: 65%;
+      width: 70px;
+      height: 70px;
+      animation-delay: 0s;
+    }
+
+    .hearts span:nth-child(6) {
+      left: 75%;
+      width: 110px;
+      height: 110px;
+      animation-delay: 3s;
+    }
+
+    .hearts span:nth-child(7) {
+      left: 35%;
+      width: 90px;
+      height: 90px;
+      animation-delay: 7s;
+    }
+
+    .hearts span:nth-child(8) {
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      animation-delay: 15s;
+      animation-duration: 20s;
+    }
+
+    .hearts span:nth-child(9) {
+      left: 20%;
+      width: 30px;
+      height: 30px;
+      animation-delay: 2s;
+      animation-duration: 17s;
+    }
+
+    .hearts span:nth-child(10) {
+      left: 85%;
+      width: 120px;
+      height: 120px;
+      animation-delay: 0s;
+      animation-duration: 11s;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 50%;
+      }
+
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hearts">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="container">
+    <h1>¡Hola, Pamela!</h1>
+    <p>Quiero preguntarte algo muy importante amor de mi vida...</p>
+    <p>¿Quieres ser mi San Valentín?</p>
+    <div class="buttons">
+      <button id="si">¡Sí!</button>
+      <button id="no">No</button>
+    </div>
+    <div id="mensaje"></div>
+  </div>
+
+  <script>
+    const botonSi = document.getElementById('si');
+    const botonNo = document.getElementById('no');
+    const mensaje = document.getElementById('mensaje');
+    botonSi.addEventListener('click', () => {
+      mensaje.textContent = '¡Yay! ¡Eres mi San Valentín, mi vida muah besito ! 💖';
+    });
+    botonNo.addEventListener('click', () => {
+      mensaje.textContent = '😢 ¡Ay, qué triste! Pero seguiré intentándolo, mi vida besito...';
+    });
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
